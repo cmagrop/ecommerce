@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("org.sonarqube") version "6.2.0.5505"
     id("kotlin-kapt")
 }
 
@@ -78,4 +79,11 @@ dependencies {
     annotationProcessor(libs.androidx.room.compiler)
     kapt("androidx.room:room-compiler:2.6.1")
     implementation(libs.androidx.room.ktx)
+}
+
+sonar {
+  properties {
+    property("sonar.projectKey", "Ecommerce")
+    property("sonar.projectName", "Ecommerce")
+  }
 }
